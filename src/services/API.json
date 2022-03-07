@@ -1,0 +1,48 @@
+{
+  "products": [
+    {
+      "name": "Produto 1",
+      "category": "Categoria 1"
+    },
+    {
+      "name": "Produto 2",
+      "category": "Categoria 1"
+    },
+    {
+      "name": "Produto 3",
+      "category": "Categoria 1"
+    },
+    {
+      "name": "Produto 4",
+      "category": "Categoria 1"
+    },
+    {
+      "name": "Produto 5",
+      "category": "Categoria 1"
+    },
+    {
+      "name": "Produto 6",
+      "category": "Categoria 2"
+    },
+    {
+      "name": "Produto 7",
+      "category": "Categoria 2"
+    },
+    {
+      "name": "Produto 8",
+      "category": "Categoria 2"
+    },
+    {
+      "name": "Produto 9",
+      "category": "Categoria 3"
+    },
+    {
+      "name": "Produto 10",
+      "category": "Categoria 3"
+    },
+    {
+      "name": "Produto 11",
+      "category": "Categoria 3"
+    }
+  ]
+}

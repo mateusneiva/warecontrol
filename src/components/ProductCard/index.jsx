@@ -8,12 +8,12 @@ import {
 } from './styles';
 import { Container } from '../Shared';
 
-const ProductCard = () => {
+const ProductCard = ({ data }) => {
   return (
     <ProductContainer>
       <Container align-items="center">
-        <ProductName>Produto 1</ProductName>
-        <Tag>Categoria</Tag>
+        <ProductName>{data.name}</ProductName>
+        <Tag>{data.category}</Tag>
       </Container>
       <ActionsWrapper>
         <div>
