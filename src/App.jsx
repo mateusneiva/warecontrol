@@ -1,12 +1,17 @@
 import React from 'react';
 import Router from './router';
-// import GlobalStyle from './styles/global';
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeColorProvider } from './contexts/Theme';
+import { RowsProvider } from './contexts/Table';
 
 const App = () => {
   return (
-    <>
-      <Router />
-    </>
+    <RowsProvider>
+      <ThemeColorProvider>
+        <CssBaseline />
+        <Router />
+      </ThemeColorProvider>
+    </RowsProvider>
   );
 };
 

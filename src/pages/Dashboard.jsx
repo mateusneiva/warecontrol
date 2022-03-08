@@ -1,8 +1,15 @@
 import React from 'react';
-import ProductsTable from '../components/ProductsTable';
+import Header from '../components/Dashboard/Header';
+import { Table, SpeedDial } from '../components/Dashboard';
 
 const Dashboard = () => {
-  return <ProductsTable />;
+  return (
+    <>
+      <Header />
+      <Table />
+      <SpeedDial />
+    </>
+  );
 };
 
 export default Dashboard;

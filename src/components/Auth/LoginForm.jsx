@@ -13,6 +13,7 @@ import {
   Paper,
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 //import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -25,8 +26,8 @@ function Copyright(props) {
       {...props}
     >
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="#">
+        Empresa
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -57,7 +58,8 @@ const LoginForm = () => {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random)',
+            backgroundImage:
+              'url(https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) => t.palette.grey[50],
             backgroundSize: 'cover',
@@ -90,8 +92,9 @@ const LoginForm = () => {
                 margin="normal"
                 required
                 fullWidth
-                id="email"
                 label="Nome de usuário ou Email"
+                id="email"
+                name="email"
                 autoComplete="email"
                 autoFocus
               />
@@ -100,8 +103,9 @@ const LoginForm = () => {
                 required
                 fullWidth
                 label="Senha"
-                type="password"
                 id="password"
+                name="password"
+                type="password"
                 autoComplete="current-password"
               />
               <FormControlLabel
