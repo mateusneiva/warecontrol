@@ -5,7 +5,7 @@ export const ProductContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 329px;
-  min-height: 106px;
+  min-height: 50px;
   border: 1px #c4c4c4 solid;
   padding: 15px;
   border-radius: 3px;
@@ -21,13 +21,13 @@ export const Tag = styled.div`
   justify-content: center;
   align-items: center;
   color: #ffffff;
-  background: #3b7ae6;
+  background: ${(props) => (props.color ? props.color : '#3b7ae6')};
   border-radius: 5px;
   font-size: 12px;
   font-weight: 500;
   padding: 5px;
   padding-inline: 10px;
-  margin-inline: 10px;
+  margin-right: 10px;
   text-transform: uppercase;
 `;
 

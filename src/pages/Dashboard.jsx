@@ -1,19 +1,8 @@
 import React from 'react';
-import { Container } from '../components/Shared';
-import Header from '../components/Header';
-import RegisterForm from '../components/RegisterForm';
-import ProductsList from '../components/ProductsList';
+import ProductsTable from '../components/ProductsTable';
 
 const Dashboard = () => {
-  return (
-    <>
-      <Header />
-      <Container justifyContent="center" style={{ marginTop: '80px' }}>
-        <RegisterForm />
-        <ProductsList />
-      </Container>
-    </>
-  );
+  return <ProductsTable />;
 };
 
 export default Dashboard;

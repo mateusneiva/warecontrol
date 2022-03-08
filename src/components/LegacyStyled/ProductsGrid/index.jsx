@@ -3,7 +3,7 @@ import { ProductsContainer, Title, List } from './styles';
 import ProductCard from '../ProductCard';
 import API from '../../services/API.json';
 
-const ProductsList = () => {
+const ProductsGrid = () => {
   const [products, setProducts] = React.useState(API.products);
 
   return (
@@ -18,4 +18,4 @@ const ProductsList = () => {
   );
 };
 
-export default ProductsList;
+export default ProductsGrid;
