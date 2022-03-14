@@ -1,4 +1,4 @@
-import Auth from "./Auth";
-import Dashboard from "./Dashboard";
+import Auth from './Auth';
+import Dashboard from './Dashboard';
 
-export { Auth, Dashboard }
+export { Auth, Dashboard };

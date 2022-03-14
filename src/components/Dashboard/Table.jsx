@@ -1,17 +1,19 @@
 import React from 'react';
-import { LinearProgress } from '@mui/material';
+import { useSelector } from 'react-redux';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import { RowsContext } from '../../contexts/Table';
+import { LinearProgress } from '@mui/material';
+import { selectTable } from '@/store/TableData';
 import noRowsOverlay from './NoRowsOverlay';
 
 const Table = () => {
-  const data = React.useContext(RowsContext);
+  const tableData = useSelector(selectTable);
 
   return (
     <div style={{ height: '90vh', width: '100%' }}>
       <DataGrid
         checkboxSelection
         pagination
+        hideFooterSelectedRowCount
         disableSelectionOnClick
         labelRowsPerPage="Rows per page: "
         rowsPerPageOptions={[10, 25, 50, 100, 120]}
@@ -20,8 +22,8 @@ const Table = () => {
           NoRowsOverlay: noRowsOverlay,
           //Toolbar: GridToolbar,
         }}
-        columns={data.columns}
-        rows={data.rows}
+        columns={tableData.columns}
+        rows={tableData.rows}
         sx={{
           border: 0,
           borderColor: 'primary.light',

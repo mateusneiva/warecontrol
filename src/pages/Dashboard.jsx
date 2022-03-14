@@ -1,6 +1,7 @@
 import React from 'react';
-import Header from '../components/Dashboard/Header';
-import { Table, SpeedDial } from '../components/Dashboard';
+import Header from '@/components/Header';
+import Table from '@/components/Dashboard/Table';
+import SpeedDial from '@/components/Dashboard/SpeedDial';
 
 const Dashboard = () => {
   return (

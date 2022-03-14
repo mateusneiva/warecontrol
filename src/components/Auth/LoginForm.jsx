@@ -4,7 +4,6 @@ import {
   Button,
   TextField,
   Checkbox,
-  CssBaseline,
   Link,
   Box,
   Grid,
@@ -12,81 +11,62 @@ import {
   FormControlLabel,
   Paper,
 } from '@mui/material';
+
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-//import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {'Copyright © '}
-      <Link color="inherit" href="#">
-        Empresa
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import { useDispatch } from 'react-redux';
+import { changeUser } from '@/store/User';
+
+import Logo from '@/assets/images/logo-compressed-noicon.svg';
+import Background from '@/assets/images/hollowed-boxes.svg';
 
 const theme = createTheme();
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    dispatch(changeUser(data.get('email')));
 
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    // console.log({
+    //   email: data.get('email'),
+    //   password: data.get('password'),
+    // });
   };
 
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
-        <CssBaseline />
         <Grid
           item
           xs={false}
           sm={4}
           md={7}
           sx={{
-            backgroundImage:
-              'url(https://images.unsplash.com/photo-1587293852726-70cdb56c2866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80)',
-            backgroundRepeat: 'no-repeat',
+            backgroundImage: `url(${Background})`,
             backgroundColor: (t) => t.palette.grey[50],
-            backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
-              my: 8,
+              my: 13,
               mx: 4,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
-              Fazer login
-            </Typography>
+            <img src={Logo} />
             <Box
               component="form"
               noValidate
               onSubmit={handleSubmit}
-              sx={{ mt: 1 }}
+              sx={{ mt: 1, marginTop: '15px' }}
             >
               <TextField
                 margin="normal"
@@ -127,7 +107,6 @@ const LoginForm = () => {
                   </Link>
                 </Grid>
               </Grid>
-              <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>
         </Grid>

@@ -8,7 +8,13 @@ import {
   GridSaveAltIcon,
 } from '@mui/x-data-grid';
 
+import AddIcon from '@mui/icons-material/Add';
+
 const actions = [
+  {
+    icon: <AddIcon />,
+    name: 'Criar',
+  },
   {
     icon: <GridFilterListIcon />,
     name: 'Filtrar',
@@ -29,7 +35,7 @@ const actions = [
 
 const TableSpeedDial = () => {
   return (
-    <Box>
+    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
       <SpeedDial
         ariaLabel="SpeedDial basic example"
         sx={{ position: 'absolute', bottom: 75, right: 30 }}

@@ -1,17 +1,16 @@
 import React from 'react';
-import Router from './router';
-import CssBaseline from '@mui/material/CssBaseline';
-import { ThemeColorProvider } from './contexts/Theme';
-import { RowsProvider } from './contexts/Table';
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import Router from '@/routes';
+import useTheme from '@/hooks/useTheme';
 
 const App = () => {
+  const theme = useTheme();
+
   return (
-    <RowsProvider>
-      <ThemeColorProvider>
-        <CssBaseline />
-        <Router />
-      </ThemeColorProvider>
-    </RowsProvider>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router />
+    </ThemeProvider>
   );
 };
 
