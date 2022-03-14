@@ -4,21 +4,11 @@ import {
   Box,
   Toolbar,
   IconButton,
-  Typography,
   Avatar,
   Tooltip,
-  Paper,
 } from '@mui/material';
 
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import MoreIcon from '@mui/icons-material/MoreVert';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-
-import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
-import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { searchRows } from '@/store/TableData';
@@ -26,25 +16,15 @@ import { selectUser, logout } from '@/store/User';
 import { selectTheme, toggleTheme } from '@/store/Theme';
 import { Search, SearchIconWrapper, StyledInputBase } from './styles';
 
-import {
-  GridFilterListIcon,
-  GridColumnIcon,
-  GridTableRowsIcon,
-  GridSaveAltIcon,
-} from '@mui/x-data-grid';
+import { GridFilterListIcon, GridSaveAltIcon } from '@mui/x-data-grid';
 
 import AddIcon from '@mui/icons-material/Add';
 
 import Logo from '@/assets/images/logo-icon.svg';
-
-import RenderMenu from './Menu';
-import RenderMobileMenu from './MobileMenu';
 import RenderDrawer from './Drawer';
 
 const Header = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
-  const [isDrawerActived, setDrawerActive] = React.useState(false);
+  const [isDrawerActived, setDrawerActive] = useState(false);
 
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
@@ -60,26 +40,6 @@ const Header = () => {
 
     setDrawerActive(open);
   };
-
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
-
-  const menuId = 'primary-search-account-menu';
-  const mobileMenuId = 'primary-search-account-menu-mobile';
 
   return (
     <Box sx={{ flexGrow: 1 }}>
